@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Compressor",
+        "img": "https://i.ibb.co/FnJXkFB/Compressor.jpg",
+        "price": 270,
+        "description": "A compressor, also known as the “heart” of your air conditioner is a vital and often expensive component of your air cooling cycle.",
+        "min": 10,
+        "quantity": 1000
+    },
+    {
+        "_id": 2,
+        "name": "Air Filter",
+        "img": "https://i.ibb.co/S3Vd48J/Air-Filter.jpg",
+        "price": 120,
+        "description": "An air filter is a device for filtering particles from the air. As with any filter, air conditioner filters consist of a porous structure through which coarse and large harmful particles cannot pass through.",
+        "min": 10,
+        "quantity": 3000
+    },
+    {
+        "_id": 3,
+        "name": "Expansion Valve",
+        "img": "https://i.ibb.co/ZKhxnTb/Expansion-Valve.jpg",
+        "price": 130,
+        "description": "The expansion valve removes pressure from the liquid refrigerant to allow expansion or change of state from a liquid to a vapor in the evaporator.",
+        "min": 10,
+        "quantity": 2000
+    },
+    {
+        "_id": 4,
+        "name": "Condenser Coil",
+        "img": "https://i.ibb.co/YLx8RmV/Condenser-Coil.jpg",
+        "price": 130,
+        "description": "CONDENSER COIL (also known as an outdoor coil): Part of the outdoor portion of a split-system air conditioner or heat pump. It works along with compressor by converting refrigerant that is in a gas form back to a liquid, the coil sends heat carried by the refrigerant to the outside.",
+        "min": 10,
+        "quantity": 2500
+    },
+    {
+        "_id": 5,
+        "name": "Refrigerant",
+        "img": "https://i.ibb.co/LJv9QvW/Refrigerant.jpg",
+        "price": 190,
+        "description": "AC refrigerants are the invisible force behind the working of your air conditioner. The ability of your air conditioner to cool is dependent on it. Refrigerants absorb the heat and provide cool air as it runs through the compressor and the evaporator.",
+        "min": 10,
+        "quantity": 2200
+    },
+    {
+        "_id": 6,
+        "name": "Fan",
+        "img": "https://i.ibb.co/jJZm9kg/Fan.jpg",
+        "price": 90,
+        "description": "There can be many reasons why you are looking for a fan that cools air just like its older brother — the air conditioner. It can be an eco-friendly temporary solution for a few weeks in summer.",
+        "min": 10,
+        "quantity": 6700
+    }
+]
