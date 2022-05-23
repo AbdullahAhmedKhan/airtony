@@ -1,67 +1,68 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import Loading from '../Shared/Loading';
-import useToken from '../../hooks/useToken';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-
-const Login = () => {
+import useToken from '../../hooks/useToken';
+import Loading from '../Shared/Loading';
+const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
-    let signInError;
-    const emailRef = useRef('');
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(
-        auth
-    );
-    // const [token] = useToken(user || gUser);
+    ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    // const [token] = useToken(user || gUser);
 
-    // useEffect(() => {
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [token, from, navigate])
-    if (error || gError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    let signInError;
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
+    // if (token) {
+    //     navigate('/');
+    // }
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
-    if (loading || gLoading || sending) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
-    const onSubmit = data => {
-        signInWithEmailAndPassword(data.email, data.password);
-    };
-    const resetPassword = async () => {
-        const unknownEmail = emailRef.current.value;
-        if (unknownEmail) {
-            await sendPasswordResetEmail(unknownEmail);
-            toast.success('Sent email successfully! Please check your inbox.');
-        }
-        else {
-            toast.error('Please enter your email address first !');
-        }
+    const onSubmit = async data => {
+        console.log('update done')
+        createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
     }
     return (
-        <div className='flex justify-center items-center h-70 my-4'>
+        <div className='flex justify-center items-center h-90 my-5'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-2xl font-bold">Login</h2>
+                    <h2 className="text-center text-2xl font-bold">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Your Name" className="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'Name is required'
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-600">{errors.name.message}</span>}
+
+
+                            </label>
+                        </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input name="email" type="email" placeholder="Your Email" className="input input-bordered w-full max-w-xs" ref={emailRef}
+                            <input type="email" placeholder="Your Email" className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -104,10 +105,9 @@ const Login = () => {
 
                         {signInError}
 
-                        <input type="submit" className='w-full max-w-xs btn btn-primary' value='Login' />
+                        <input type="submit" className='w-full max-w-xs btn btn-primary' value='Sign Up' />
                     </form>
-                    <span onClick={resetPassword} style={{ cursor: 'pointer' }} className='text-sm text-right text-red-500'>Forgot Password?</span>
-                    <p className='mt-3 text-sm'>New to Doctors Portal? <Link to='/signup' className='text-secondary'>Create an account</Link></p>
+                    <p className='mt-3 text-sm'>Already have an account? <Link to='/login' className='text-secondary'>Please login</Link></p>
                     <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue with Google</button>
                 </div>
@@ -116,4 +116,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;
