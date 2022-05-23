@@ -9,6 +9,7 @@ import Review from './Pages/Review/Review';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import SignUp from './Pages/Login/SignUp';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -18,12 +19,13 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
+        <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
         <Route path='review' element={<Review></Review>}></Route>
       </Routes>
       <Footer></Footer>
 
-   <ToastContainer></ToastContainer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
