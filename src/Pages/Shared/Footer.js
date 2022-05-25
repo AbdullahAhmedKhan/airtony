@@ -25,7 +25,7 @@ const Footer = () => {
                     <a class="link link-hover">Cookie policy</a>
                 </div>
                 <div className='text-neutral-content text-center py-5'>
-                    <small className='text-xs'>Copyright © 2022 - All right reserved by Abdullah Ahammed Khan</small>
+                    <small className='text-xs'>Copyright © 2022 - All right reserved by Airtony</small>
                 </div>
             </footer>
         </div>

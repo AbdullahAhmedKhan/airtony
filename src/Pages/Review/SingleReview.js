@@ -4,7 +4,8 @@ import React from 'react';
 
 const SingleReview = ({ perReview }) => {
     const { name, img, review, ratings } = perReview;
-    let n = ratings;
+    const IntRatings = parseInt(ratings);
+    let n = IntRatings;
     return (
         <div>
             <div class="card w-96 bg-base-100 shadow-xl mx-auto">
@@ -19,12 +20,12 @@ const SingleReview = ({ perReview }) => {
                         <FontAwesomeIcon className='text-5xl pr-3 text-gray-400' icon={faQuoteLeft}></FontAwesomeIcon>
                         {review}</p>
 
-                    <div class="card-actions justify-end">                    
+                    <div class="card-actions justify-end">
                         {[...Array(n)].map((elementInArray, index) => (
                             <div className="" key={index}>  <FontAwesomeIcon className='text-warning' icon={faStar}></FontAwesomeIcon></div>
                         )
                         )}
-                        
+
                     </div>
                 </div>
             </div>

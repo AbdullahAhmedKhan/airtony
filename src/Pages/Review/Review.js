@@ -6,9 +6,12 @@ import SingleReview from './SingleReview';
 const Review = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('review.json')
+        fetch('http://localhost:5000/review')
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => {
+                parseInt(data.ratings);
+                setReviews(data);
+            })
     }, [])
     return (
         <div className='my-20'>
