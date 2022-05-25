@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyOrder = () => {
     const [user, loading] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/placeorder?email=${user.email}`)
+        fetch(`http://localhost:5000/placeorder?email=${user.email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user])
+    if(loading){
+        <Loading></Loading>
+    }
     return (
         <div className='m-5'>
             <div class="overflow-x-auto">

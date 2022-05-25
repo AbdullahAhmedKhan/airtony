@@ -56,13 +56,13 @@ const MyProfile = () => {
                         <FontAwesomeIcon className='mr-2' icon={faEnvelope}></FontAwesomeIcon>
                         {googleUser.email}</p>
                     {
-                        NormalUser? <div>
+                        NormalUser ? <div>
                             <p className='pb-2'><span className='font-bold'>Education:</span> {NormalUser.education}</p>
                             <p className='pb-2'><span className='font-bold'>City:</span> {NormalUser.city}</p>
                             <p className='pb-2'><span className='font-bold'>Contact:</span> {NormalUser.contact}</p>
                             <p className='pb-2'><span className='font-bold'>Linkedln Link:</span> {NormalUser.linkedln}</p>
 
-                        </div>:''
+                        </div> : ''
 
                     }
                     <div class="card-actions flex justify-center">

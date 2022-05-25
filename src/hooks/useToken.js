@@ -6,7 +6,7 @@ const useToken = user => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(` https://boiling-peak-84771.herokuapp.com/user/${email}`, {
+            fetch(`http://localhost:5000/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -15,13 +15,15 @@ const useToken = user => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('Data inside token:', data);
+                    console.log('data inside useToken', data);
                     const accessToken = data.token;
                     localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
                 })
         }
+
     }, [user]);
     return [token];
 }
+
 export default useToken;

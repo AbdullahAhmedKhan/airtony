@@ -15,14 +15,14 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const navigate = useNavigate();
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-    // const [token] = useToken(user || gUser);
+     const [token] = useToken(user || gUser);
 
     let signInError;
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    // if (token) {
-    //     navigate('/');
-    // }
+    if (token) {
+        navigate('/');
+    }
     if (error || gError || updateError) {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
