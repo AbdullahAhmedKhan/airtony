@@ -16,6 +16,7 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import AddReview from './Pages/Dashboard/AddReview';
 import Checkout from './Pages/Checkout/Checkout';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
         <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
         <Route path='review' element={<Review></Review>}></Route>

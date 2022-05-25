@@ -81,7 +81,7 @@ const AddReview = () => {
                             <div class="mb-6">
                                 <button
                                     type="submit"
-                                    class="w-full px-2 py-4 text-white bg-indigo-500 rounded-md  focus:bg-indigo-600 focus:outline-none">
+                                    class="w-full px-2 py-4 text-white btn btn-primary rounded-md  focus:bg-indigo-600 focus:outline-none">
                                     Send Review
                                 </button>
                             </div>

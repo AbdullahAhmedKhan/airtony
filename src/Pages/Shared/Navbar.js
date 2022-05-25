@@ -40,6 +40,11 @@ const Navbar = () => {
                     {menuItems}
                 </ul>
             </div>
+            <div className="navbar-end">
+                <label tabIndex="1" for="dashboard-sidebar" className="btn btn-primary shadow-md rounded-full btn-sm lg:hidden">Dashboard
+
+                </label>
+            </div>
 
         </div>
     );
