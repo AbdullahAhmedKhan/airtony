@@ -15,7 +15,7 @@ const Part = ({ part }) => {
                 <p>{description}</p>
                 <p className='text-lg'>Price: <span className='font-bold text-warning'>{price}$</span></p>
                 <span className='w-32 btn btn-xs text-xs p-1 btn-outline'>Minimum Order: {min} </span>
-                <span>Quantity: {quantity}</span>
+                <span>Available quantity: {quantity}</span>
                 <div class="card-actions justify-end">
                     <button onClick={() => handleBuy(_id)} class="btn btn-primary">Buy Now</button>
                 </div>

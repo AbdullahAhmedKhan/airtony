@@ -40,9 +40,7 @@ const Checkout = () => {
         else {
             setqError('');
         }
-
     }
-
     const handlePlaceOrder = e => {
         e.preventDefault();
         const placeOrder = {
@@ -72,7 +70,6 @@ const Checkout = () => {
                     }
                 })
         }
-
 
     }
     return (

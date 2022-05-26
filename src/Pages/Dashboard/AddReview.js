@@ -33,7 +33,7 @@ const AddReview = () => {
                 <div class="max-w-xl p-5 mx-auto my-5 bg-white rounded-md shadow-xl rounded-lg">
                     <div class="text-center">
                         <h1 class="my-3 text-3xl font-semibold text-gray-700">Add a review</h1>
-                        <p class="text-gray-400">Fill up the form to to send us a review</p>
+                        <p class="text-gray-400">Fill up the form to send us a review</p>
                     </div>
                     <div>
                         <form onSubmit={handleAddReview}>
