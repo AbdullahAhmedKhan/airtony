@@ -14,7 +14,7 @@ const AddProduct = () => {
             quantity: e.target.quantity.value
         }
         console.log(product);
-        fetch('http://localhost:5000/addproduct', {
+        fetch('https://fathomless-reaches-02788.herokuapp.com/addproduct', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(product)

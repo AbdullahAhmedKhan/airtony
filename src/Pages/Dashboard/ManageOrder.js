@@ -5,7 +5,7 @@ const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
     const [ship, setShip] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://fathomless-reaches-02788.herokuapp.com/orders', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -15,7 +15,7 @@ const ManageOrder = () => {
             .then(data => setOrders(data))
     }, [])
     const handleShip = id => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://fathomless-reaches-02788.herokuapp.com/order/${id}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
@@ -29,13 +29,13 @@ const ManageOrder = () => {
                     toast.success("Successfully Order Shipped");
                     setShip(true);
                 }
-                else{
+                else {
                     setShip(false);
                 }
             });
 
     }
-    
+
     return (
         <div className='m-2 lg:m-12'>
             <div class="overflow-x-auto">
@@ -66,11 +66,11 @@ const ManageOrder = () => {
                                     <td><button className='btn btn-secondary rounded-full btn-sm text-white'>Paid</button></td>
                                     <td>
                                         {
-                                            ship?<button className='btn btn-success rounded-full btn-sm text-white'>Shipped</button>:<button onClick={() => handleShip(order._id)} className='btn btn-success rounded-full btn-sm text-white'>Pending</button>
+                                            ship ? <button className='btn btn-success rounded-full btn-sm text-white'>Shipped</button> : <button onClick={() => handleShip(order._id)} className='btn btn-success rounded-full btn-sm text-white'>Pending</button>
                                         }
-                                    
-                                    <button onClick={() => handleShip(order._id)} className='ml-3 btn btn-error rounded-full btn-sm text-white'>cancel</button>
-                                        </td>
+
+                                        <button onClick={() => handleShip(order._id)} className='ml-3 btn btn-error rounded-full btn-sm text-white'>cancel</button>
+                                    </td>
                                 </tr>
                             )
                         }

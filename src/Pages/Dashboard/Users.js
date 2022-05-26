@@ -7,7 +7,7 @@ import UserRow from './UserRow';
 
 const Users = () => {
     // const [deleteUser, setDeleteUser] = useState(null);
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://fathomless-reaches-02788.herokuapp.com/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

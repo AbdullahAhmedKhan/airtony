@@ -12,7 +12,7 @@ const AddReview = () => {
             ratings: e.target.ratings.value
         }
         console.log(reviews);
-        fetch('http://localhost:5000/review', {
+        fetch('https://fathomless-reaches-02788.herokuapp.com/review', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviews)

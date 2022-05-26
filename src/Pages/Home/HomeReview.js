@@ -6,7 +6,7 @@ import SingleReview from '../Review/SingleReview';
 const HomeReview = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://fathomless-reaches-02788.herokuapp.com/review')
             .then(res => res.json())
             .then(data => {
                 parseInt(data.ratings);

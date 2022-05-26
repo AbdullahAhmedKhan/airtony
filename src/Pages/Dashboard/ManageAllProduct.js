@@ -5,7 +5,7 @@ const ManageAllProduct = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/part', {
+        fetch('https://fathomless-reaches-02788.herokuapp.com/part', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,7 +16,7 @@ const ManageAllProduct = () => {
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/part/${id}`, {
+        fetch(`https://fathomless-reaches-02788.herokuapp.com/part/${id}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`

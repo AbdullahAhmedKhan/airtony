@@ -16,7 +16,7 @@ const Checkout = () => {
     const [user, loading] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `http://localhost:5000/part/${productId}`;
+        const url = `https://fathomless-reaches-02788.herokuapp.com/part/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -57,7 +57,7 @@ const Checkout = () => {
             return;
         }
         else {
-            fetch('http://localhost:5000/placeOrder', {
+            fetch('https://fathomless-reaches-02788.herokuapp.com/placeOrder', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(placeOrder)
