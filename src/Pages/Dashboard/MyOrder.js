@@ -51,7 +51,21 @@ const MyOrder = () => {
                                                 Pay
                                             </button>
                                         </Link>
-                                    )}</td>
+                                    )}
+                                        {order.placePrice && order.paid && (
+                                            <div>
+                                                <button className="btn btn-xs btn-success disabled text-white lg:px-4">
+                                                    Paid
+                                                </button>
+                                                <p>
+                                                    Transaction id:{" "}
+                                                    <span className="text-primary">
+                                                        {order.transactionId}
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        )}
+                                    </td>
 
                                 </tr>
                             )
