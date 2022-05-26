@@ -23,9 +23,13 @@ const Dashboard = () => {
 
                     {/* <!-- Sidebar content here --> */}
 
-                    <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard'>My Order</Link></li>
+                    {
+                        !admin && <>
+                        <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard'>My Order</Link></li>
                     <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard/myprofile'>My Profile</Link></li>
                     <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard/addreview'>Add Review</Link></li>
+                    </>
+                    }
                     {/* {admin && <>
                         <li><Link to='/dashboard/users'>All Users</Link></li>
                         <li><Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>
@@ -33,9 +37,10 @@ const Dashboard = () => {
                     </>} */}
                     {admin &&
                         <>
-                            <li><button className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to="/dashboard/users">Make Admin</Link></button></li>
-                            <li><button className='btn btn-primary my-2 text-white btn-outline border border-2 rounded-full shadow-lg'><Link to="/dashboard/addproduct">Add Product</Link></button></li>
-                            <li><button className='btn btn-primary my-2 text-white btn-outline border border-2 rounded-full'><Link to="/dashboard/manage">Manage Product</Link></button></li>
+                            <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to="/dashboard/users">Make Admin</Link></li>
+                            <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to="/dashboard/addproduct">Add Product</Link></li>
+                            <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to="/dashboard/manage">Manage Order</Link></li>
+                            <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to="/dashboard/manageproduct">Manage Products</Link></li>
                         </>
                     }
                 </ul>

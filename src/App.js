@@ -20,7 +20,8 @@ import NotFound from './Pages/NotFound/NotFound';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import Users from './Pages/Dashboard/Users';
 import AddProduct from './Pages/Dashboard/AddProduct';
-import ManageProduct from './Pages/Dashboard/ManageProduct';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
+import ManageAllProduct from './Pages/Dashboard/ManageAllProduct';
 
 function App() {
   return (
@@ -49,11 +50,11 @@ function App() {
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='users' element={<Users></Users>}></Route>
           <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>
-          <Route path='manage' element={<ManageProduct></ManageProduct>}></Route>
+          <Route path='manage' element={<ManageOrder></ManageOrder>}></Route>
+          <Route path='manageproduct' element={<ManageAllProduct></ManageAllProduct>}></Route>
         </Route>
       </Routes>
       <Footer></Footer>
-
       <ToastContainer></ToastContainer>
     </div>
   );

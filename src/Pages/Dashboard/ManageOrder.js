@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const ManageProduct = () => {
+const ManageOrder = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products', {
+        fetch('http://localhost:5000/orders', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -54,4 +54,4 @@ const ManageProduct = () => {
     );
 };
 
-export default ManageProduct;
+export default ManageOrder;
