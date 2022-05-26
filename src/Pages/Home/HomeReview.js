@@ -21,7 +21,7 @@ const HomeReview = () => {
 
             <div className='mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-12'>
                 {
-                    reviews.reverse().slice(0,3).map(perReview => <SingleReview
+                    reviews.reverse().map(perReview => <SingleReview
                         key={perReview._id}
                         perReview={perReview}
                     ></SingleReview>)
