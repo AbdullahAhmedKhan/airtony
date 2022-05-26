@@ -35,7 +35,7 @@ const Payment = () => {
                     <p className="text-xl text-secondary">Hello, {user.displayName} ☺</p>
                     <h2 class="card-title">
                         Please pay for{" "}
-                        <span className="font-bold">"{order.placeOrderProductName}"</span>
+                        <span className="font-bold">{order.placeOrderProductName}</span>
                     </h2>
 
                     <p>

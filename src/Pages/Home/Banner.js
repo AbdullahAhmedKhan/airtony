@@ -10,7 +10,7 @@ const Banner = () => {
             <div class="hero-content text-center text-neutral-content">
                 <div class="max-w-md">
                     <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-                    <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <p class="mb-5">According to Mayo Clinic, running an A/C not only reduces humidity in your home, but can also lower the amount of pollen, mold, mildew and other airborne outdoor allergens that can potentially lead to asthma symptoms. Air conditioners can also lower your exposure to indoor allergens, like dust mites.</p>
                     <button class="btn btn-primary">Get Started</button>
                 </div>
             </div>

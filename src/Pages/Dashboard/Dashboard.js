@@ -25,11 +25,11 @@ const Dashboard = () => {
 
                     {
                         !admin && <>
-                        <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard'>My Order</Link></li>
-                    <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard/myprofile'>My Profile</Link></li>
-                    <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard/addreview'>Add Review</Link></li>
-                    </>
+                            <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard'>My Order</Link></li>
+                            <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard/addreview'>Add Review</Link></li>
+                        </>
                     }
+                    <li className='btn btn-primary btn-outline border border-2 rounded-full shadow-lg my-2'><Link to='/dashboard/myprofile'>My Profile</Link></li>
                     {/* {admin && <>
                         <li><Link to='/dashboard/users'>All Users</Link></li>
                         <li><Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>

@@ -57,11 +57,10 @@ const MyProfile = () => {
                         {googleUser.email}</p>
                     {
                         NormalUser ? <div>
-                            <p className='pb-2'><span className='font-bold'>Education:</span> {NormalUser.education}</p>
-                            <p className='pb-2'><span className='font-bold'>City:</span> {NormalUser.city}</p>
-                            <p className='pb-2'><span className='font-bold'>Contact:</span> {NormalUser.contact}</p>
-                            <p className='pb-2'><span className='font-bold'>Linkedln Link:</span> {NormalUser.linkedln}</p>
-
+                            {NormalUser.education ? <p className='pb-2'><span className='font-bold'>Education:</span> {NormalUser.education}</p> : ''}
+                            {NormalUser.city ? <p className='pb-2'><span className='font-bold'>City:</span> {NormalUser.city}</p> : ''}
+                            {NormalUser.contact ? <p className='pb-2'><span className='font-bold'>Contact:</span> {NormalUser.contact}</p> : ''}
+                            {NormalUser.linkedln ? <p className='pb-2'><span className='font-bold'>Linkedln Link:</span> {NormalUser.linkedln}</p> : ''}
                         </div> : ''
 
                     }
