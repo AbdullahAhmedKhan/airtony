@@ -22,6 +22,7 @@ import Users from './Pages/Dashboard/Users';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageOrder from './Pages/Dashboard/ManageOrder';
 import ManageAllProduct from './Pages/Dashboard/ManageAllProduct';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
         <Route path='portfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='payment/:paymentId' element={<Payment></Payment>}></Route>
         <Route path='review' element={<Review></Review>}></Route>
         <Route path='/part/:productId' element={
           <RequireAuth>
