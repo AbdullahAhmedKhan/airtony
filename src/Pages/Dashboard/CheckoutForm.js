@@ -83,7 +83,7 @@ const handleSubmit = async (event) => {
             transactionId: paymentIntent.id,
         };
 
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`http://localhost:5000/placeorder/${_id}`, {
             method: "PATCH",
             headers: {
             "content-type": "application/json",

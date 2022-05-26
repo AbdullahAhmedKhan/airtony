@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -16,7 +17,7 @@ const MyOrder = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user])
-    if(loading){
+    if (loading) {
         <Loading></Loading>
     }
     return (
@@ -44,7 +45,13 @@ const MyOrder = () => {
                                     <td>{order.placeOrderQuantity}</td>
                                     <td>{order.placePrice}$</td>
                                     <td><button className='btn btn-error btn-xs'>Delete</button></td>
-                                    <td><button className='btn btn-success btn-sm text-white'>Pay</button></td>
+                                    <td>{order.placePrice && !order.paid && (
+                                        <Link to={`/dashboard/payment/${order._id}`}>
+                                            <button className="btn btn-xs btn-secondary lg:px-5">
+                                                Pay
+                                            </button>
+                                        </Link>
+                                    )}</td>
 
                                 </tr>
                             )

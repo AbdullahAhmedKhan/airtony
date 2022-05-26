@@ -2,11 +2,10 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
-
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./CheckoutForm";
 import Loading from "../Shared/Loading";
+import CheckoutForm from "./CheckoutForm";
 import auth from "../../firebase.init";
 
 const stripePromise = loadStripe(
@@ -36,14 +35,12 @@ const Payment = () => {
                     <p className="text-xl text-secondary">Hello, {user.displayName} ☺</p>
                     <h2 class="card-title">
                         Please pay for{" "}
-                        <span className="font-bold">"{order.orderProductName}"</span>
+                        <span className="font-bold">"{order.placeOrderProductName}"</span>
                     </h2>
-                    <p>
-                        You have ordered: <span className="font-bold">{order.date}</span>
-                    </p>
+
                     <p>
                         Please Pay:{" "}
-                        <span className="text-orange-500">${order.orderPrice}</span>
+                        <span className="text-orange-500">${order.placePrice}</span>
                     </p>
                 </div>
             </div>
